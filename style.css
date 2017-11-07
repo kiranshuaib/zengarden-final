@@ -1,0 +1,334 @@
+* {
+   box-sizing: border-box;
+}
+/*background-image*/
+html{
+  /*low res image for all screen sizes 96dpi*/
+    background: url("https://d2ebzu6go672f3.cloudfront.net/media/content/images/mindfulness-mood-positive-yoga-stress-freeiStock_000022657478_Medium.jpg") no-repeat center center fixed ;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+/*media query for retina screen 96 * 2 = 192*/
+/*add divide pixel ratio for browser safari*/
+
+@@media (-webkit-min-device-pixel-ratio:2),
+(min-resolution: 192dpi) {
+  html{
+  /*high res image for retina screen*/
+  background: url("https://d2ebzu6go672f3.cloudfront.net/media/content/images/mindfulness-mood-positive-yoga-stress-freeiStock_000022657478_Medium@2x.jpg") no-repeat center center fixed ;
+}
+}
+
+
+
+/*Typography*/
+
+h1{
+font-size: 3.5em; /*57px 57/16 = 3.56*/
+color: rgba(64, 11, 57, 0.78);
+}
+/*zoomInDown*/
+
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+.zoomInDown {
+  animation-name: zoomInDown;
+}
+
+
+}
+h2{
+font-size: 2.5em;
+
+}
+h3{
+font-size: 2em;
+
+}
+p{
+font-size: 1em;
+line-height: 2;/*line height without the unit of measurement makes it more flexible*/
+}
+ h1,h2,header{
+   font-family: fantasy;
+   top:0px;
+   text-align: center;
+ }
+
+
+
+ /* layout */
+.page-wrapper{
+   max-width: 600px;
+   margin: auto;
+   background:rgba(154, 112, 159, 0.36);
+   padding: 2em;
+ }
+
+
+ @media(min-width:320px){
+     .page-wrapper {
+       margin:auto;
+}
+}
+
+
+aside.sidebar{
+position:absolute;
+background-color:rgba(111, 129, 159, 0.36);
+max-width:400px;
+display:block;
+transition: all .5s linear;
+transform: rotate(90deg) scale(.01);
+right: 0;
+  }
+
+  @media (min-width:1200px){
+    aside.sidebar {
+
+transform: rotate(0deg) scale(1);
+    }
+  }
+
+.menu_active .sidebar{
+      display:block;
+      right: 0px;
+      top: 0px;
+      transform: rotate(0deg) scale(1);
+    }
+
+    .button{
+      background: pink;
+    }
+    /* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+.navbar-toggler{
+  float:left;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+}
+
+/* Style the links inside the left sidenav */
+
+#mySidenav a {
+    position: fixed; /* Position them relative to the browser window */
+    left: 40px;; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 10px; /* 15px padding */
+    margin: 15px;
+    width: 115px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+#nav-summary {
+    top: 40px;
+    padding: 15px;
+    background-color:rgba(111, 129, 159, 0.36);
+}
+
+#nav-preamble {
+    top: 120px;
+    background-color:rgba(111, 129, 159, 0.36);
+    padding:10px;
+}
+
+#nav-explanation {
+    top: 200px;
+    background-color:rgba(111, 129, 159, 0.36);
+    padding: 10px;
+}
+
+#nav-participation{
+    top: 280px;
+    background-color:rgba(111, 129, 159, 0.36);
+    padding: 10px;
+}
+
+#nav-benefits{
+  top: 360px;
+  background-color:rgba(111, 129, 159, 0.36);
+  padding: 10px;
+}
+
+#nav-requirements{
+  top: 420px;
+  background-color:rgba(111, 129, 159, 0.36);
+  padding: 10px;
+}
+
+footer{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  background:#fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer>a{
+  margin: 10px;
+  padding: 10px 20px;
+
+}
+
+.sidenav {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .sidenav {
+    display: block;
+  }
+}
+
+.requirements {
+  margin-bottom: 100px;
+}
+
+.menu_button {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  font-size: 20px;
+}
+
+@media (min-width: 1200px){
+    .menu_button {
+      display: none;
+    }
+}
+
+.select{
+  font-family:fantasy;
+  padding:10px;
+  margin: auto;
+}
+
+.archives{
+  font-family:fantasy;
+  padding:10px;
+  margin: auto;
+  text-decoration: none;
+  color:rgb(31, 9, 59);
+}
+
+.resources{
+  font-family:fantasy;
+  padding:10px;
+  margin: auto;
+}
+
+nav >ul >li>a{
+  font-family:fantasy;
+  color:rgb(31, 9, 59);
+}
+
+nav >ul >li>a:hover{
+  color: rgb(25, 22, 85);
+
+
+}
+
+.design-selection .design-archives{
+  font-family: fantasy;
+    color:rgb(31, 9, 59);
+}
+
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspect#dbcaddive(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  background-color: #dbcadd;
+  text-decoration: none;
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+.zen-resources ul li a{
+  font-family: fantasy;
+    color:rgb(31, 9, 59);
+}
+.select{
+  padding-top: 40px;
+}
